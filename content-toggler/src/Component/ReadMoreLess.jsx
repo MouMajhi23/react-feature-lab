@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+//please note : here I have use inline styles mostly, because my focus is not css or style - but mastering react 
 const ReadMoreLess = () => {
   const [readMore, setReadMore] = useState(false);
   const buttonStyle = {
