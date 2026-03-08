@@ -1,18 +1,39 @@
-# React + Vite
+# 🔍 Show More / Less Toggle
+Feature: Conditional Content Rendering
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Core Concept: Boolean State Management with useState
 
-Currently, two official plugins are available:
+# 📝 Description
+A common UI pattern used to handle long text or descriptions. It allows the user to expand or collapse content to keep the interface clean and improve readability. This project demonstrates how to sync a boolean state with both Text Content and Conditional Styling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🛠️ Technical Implementation
+State Management: Utilizes useState(false) to track the visibility of the extended content.
 
-## React Compiler
+Functional Updates: Employs the setReadMore(prev => !prev) pattern to safely toggle the state based on the current value.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Conditional Rendering: Uses a ternary operator within the style attribute to switch between display: "none" and display: "block" (or inline).
 
-Note: This will impact Vite dev & build performances.
+Dynamic UI Text: The button label is dynamically calculated to switch between "Read More" and "Read Less" based on the readMore boolean.
 
-## Expanding the ESLint configuration
+Inline Styling: Implements React-specific camelCase CSS properties (e.g., backgroundColor, borderRadius) for the button and container layout.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 🚀 How to Run
+To run this specific example locally, follow these steps:
+
+Navigate to the Project Directory:
+Open your terminal and enter the folder:
+
+## Bash
+cd showMoreLessToggle
+Install Dependencies:
+Install the necessary React packages using npm:
+
+## Bash
+npm install
+Start the Development Server:
+Launch the project to view it in your browser:
+
+## Bash
+npm run dev
+View the App:
+Open http://localhost:5173 (or the port shown in your terminal) to interact with the toggle.
