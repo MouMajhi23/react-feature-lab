@@ -1,18 +1,41 @@
-# React + Vite
+# 📝 Dynamic Form & Object State Management
+Feature: Controlled Component with Real-time Validation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Core Concept: Single Object State Handling with the Spread Operator (...)
 
-Currently, two official plugins are available:
+# 🔍 Description
+This project demonstrates a robust pattern for handling multiple input fields using a single state object to avoid 'State Soup'. It focuses on maintaining data integrity during updates and implementing logical UI constraints (like disabling buttons) based on real-time user input rather than relying solely on HTML5 attributes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🛠️ Technical Implementation
+Single Source of Truth: Manages sname, mobile, and email within a single formData object to keep the state synchronized and scalable.
 
-## React Compiler
+Immutability with Spread Operator: Employs setFormData(prev => ({ ...prev, [name]: value })) to update specific keys without losing existing data in other fields.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Computed Property Names: Uses ES6 dynamic keys [name] to create a single, reusable handleChange function for all input types.
 
-Note: This will impact Vite dev & build performances.
+Logical Validation: Implements a derived boolean isFormInvalid to calculate form completeness on every keystroke, providing immediate visual feedback.
 
-## Expanding the ESLint configuration
+Conditional Styling: Dynamically switches between submitButtonStyle and disableButtonStyle using React inline styles (camelCase) based on the validation state.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Input Constraints: Integrates Regex patterns for 10-digit mobile validation and email format checks directly within the React render logic.
+
+# 🚀 How to Run
+To run the Update Form feature locally:
+
+1. Navigate to the Project Directory
+Open your terminal and enter the feature folder:
+
+Bash
+cd UpdateForm
+2. Install Dependencies
+Install the necessary React packages:
+
+Bash
+npm install
+3. Start the Development Server
+Launch the project to view it in your browser:
+
+Bash
+npm run dev
+4. View the App
+Open http://localhost:5173 (or the port specified in your terminal) to test the form validation and submission logic.

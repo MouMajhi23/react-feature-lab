@@ -3,7 +3,7 @@ import { useState } from "react"
 const MyForm = ()=>{
     const formBodyStyle = {
         display:"flex",
-        ["background-color"]:"#ad9992",
+        backgroundColor:"#ad9992",
         ["align-items"]:"center",
         ["justify-content"]:"center",
         ["flex-direction"]:"column",
@@ -29,7 +29,7 @@ const MyForm = ()=>{
     }
     const submitButtonStyle = {
         padding: "20px",
-         ["background-color"]:"#8A9A8B",
+        backgroundColor:"#8A9A8B",
         cursor: "pointer",
         opacity: 1
     }
