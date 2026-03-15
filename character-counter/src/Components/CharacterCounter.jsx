@@ -12,8 +12,9 @@ const CharacterCounter = ()=>{
     }
     const paraStyle = {
         ["font-family"]:"math",
-        ["font-size"]:"12px",
-        color:"#2c9ff2"
+        ["font-size"]:"15px",
+        ["font-weight"]:"800",
+        color:"#362c8c"
     }
     const alertParaStyle = {
         ...paraStyle,
@@ -24,8 +25,8 @@ const CharacterCounter = ()=>{
     const remaining = maxLen - userInput.length;
     return(
         <div style={appBodyStyle}>
-            <h2>Character Counter App</h2>
-            <p>Type your text below</p>
+            <h2 style={{background:"#52a3eb", fontSize:"24px", color:"white", padding:"5px 10px"}}>Character Counter App</h2>
+            <p style={{fontSize:"20px"}}>Type your text below</p>
             <textarea type="textarea" placeholder="type your text here..." maxLength={maxLen}
             rows="4" cols="50"
             value={userInput}
