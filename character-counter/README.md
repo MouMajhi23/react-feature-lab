@@ -1,18 +1,30 @@
-# React + Vite
+# 🔢 Character Counter App
+Feature: Real-time Input Tracking
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Core Concept: Controlled Components & Conditional Styling
 
-Currently, two official plugins are available:
+## 📝 Description
+A functional text utility that monitors user input in real-time. It provides immediate feedback by displaying the remaining character count out of a set limit (200 characters). This project highlights how React maintains a "single source of truth" for form elements and how UI styles can react dynamically to data changes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technical Implementation
+### Controlled Input: The textarea value is bound to the userInput state, ensuring the React state and the DOM are always in sync.
 
-## React Compiler
+### State Management: Uses useState("") to capture every keystroke via the onChange event handler.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Derived State: Instead of creating a second state for the count, the remaining value is calculated during every render: maxLen - userInput.length.
 
-Note: This will impact Vite dev & build performances.
+### Dynamic Inline Styling: * Implements Style Objects with camelCase properties (e.g., backgroundColor, fontSize).
 
-## Expanding the ESLint configuration
+### Uses a Ternary Operator in the style prop to switch between paraStyle and alertParaStyle based on the character threshold (< 10).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Spread Operator: Uses the ... spread operator to create alertParaStyle, inheriting base properties while overriding the text color.
+
+## 🚀 How to Run
+Navigate to the Directory:
+Bash
+npm install
+Start the Development Server:
+Bash
+npm run dev
+Interact:
+Open the local URL provided in your terminal and begin typing in the textarea to see the counter and styling in action.
