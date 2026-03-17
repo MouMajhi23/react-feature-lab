@@ -24,7 +24,7 @@ const LikeCount = () => {
   }
 
   const [liked, setLiked] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(10);
 
   return (
     <div style={appBodyStyle}>
@@ -35,8 +35,12 @@ const LikeCount = () => {
         <button
           style={btnStyle}
           onClick={() => {
-          setCount(count + 1);
-          setLiked(true);
+            if(liked)
+                setCount(prev => prev - 1);
+            else
+                 setCount(prev => prev + 1);
+
+          setLiked(!liked);
         }}
         >
           {liked ? (

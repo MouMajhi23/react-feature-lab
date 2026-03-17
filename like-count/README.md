@@ -1,18 +1,39 @@
-# React + Vite
+# ❤️ Like Counter (Toggle Logic)
+Feature: Status Toggling & Dynamic Increment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Core Concept: Functional State Updates
 
-Currently, two official plugins are available:
+## 📝 Description
+This component simulates a social media "Like" interaction. It synchronizes two pieces of state: the visual icon representation and the numerical count. It demonstrates how to handle conditional logic within a single event handler to perform both "Like" and "Unlike" actions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Technical Implementation
+Functional State Updates: Uses the prev => prev +/- 1 pattern in setCount to ensure state updates are based on the most accurate previous value.
 
-## React Compiler
+Conditional Logic: A single handleLike function checks the liked boolean to determine whether the count should increase or decrease.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+State Synchronization: The liked boolean and the count integer are updated simultaneously to keep the UI consistent.
 
-Note: This will impact Vite dev & build performances.
+## 📦 Dependencies
+This project uses the Ant Design icon set from the react-icons library.
 
-## Expanding the ESLint configuration
+To install the library, run the following command in your terminal:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Bash
+npm install react-icons
+### 🚀 How to Run
+Navigate to the folder:
+
+Bash
+### cd like-count
+Install all packages:
+
+Bash
+### npm install
+Install the icon library (if not already present):
+
+Bash
+### npm install react-icons
+Start the development server:
+
+Bash
+### npm run dev
