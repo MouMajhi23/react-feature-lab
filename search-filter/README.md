@@ -9,9 +9,11 @@ A high-performance search utility that filters a list of data as the user types.
 ### 🛠️ Technical Implementation
 Derived State Pattern: The result variable is calculated on every render using .filter(). This prevents "state synchronization" bugs and reduces memory overhead.
 
-### Object-Oriented Data: Transitions from simple strings to an array of objects { id, name }. This mimics real-world API responses and allows for more complex data handling.
+### Object-Oriented Data: 
+Transitions from simple strings to an array of objects { id, name }. This mimics real-world API responses and allows for more complex data handling.
 
-### Case-Insensitive Logic: Normalizes both the search term and the data using .toLowerCase() to provide a seamless user experience.
+### Case-Insensitive Logic:
+Normalizes both the search term and the data using .toLowerCase() to provide a seamless user experience.
 
 
 ## 🚀 How to Run
