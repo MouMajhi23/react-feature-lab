@@ -21,13 +21,13 @@ To run this specific example locally, follow these steps:
 Navigate to the Project Directory: Open your terminal and enter the folder:
 
 ## Bash
-cd windowResizer
-Install Dependencies: Install the necessary React packages using npm:
+### cd windowResizer
+##### Install Dependencies: Install the necessary React packages using npm:
 
 ## Bash
-npm install
-Start the Development Server: Launch the project to view it in your browser:
+### npm install
+#### Start the Development Server: Launch the project to view it in your browser:
 
 ## Bash
-npm run dev
-View the App: Open http://localhost:5173 and try resizing your browser window to see the dimensions update live.
+### npm run dev
+#### View the App: Open http://localhost:5173 and try resizing your browser window to see the dimensions update live.
