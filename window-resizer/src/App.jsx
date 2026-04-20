@@ -10,6 +10,7 @@ function App() {
         setHeight(window.innerHeight)
       }
     window.addEventListener('resize', handleResize);
+    //demount
     return () => {
     window.removeEventListener('resize', handleResize);
     }

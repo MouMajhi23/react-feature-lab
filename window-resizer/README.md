@@ -1,18 +1,33 @@
-# React + Vite
+📏 Window Resizer (Cleanup Pattern)
+Feature: Real-time Window Dimension Tracking
+Core Concept: Side Effect Lifecycle & Memory Management with useEffect
+📝 Description
+A vital utility for responsive design. This project tracks the browser window's width and height in real-time. It demonstrates the critical "Cleanup" phase of the useEffect hook, ensuring that global event listeners are properly destroyed when the component is no longer in use to prevent memory leaks.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🛠️ Technical Implementation
+State Management: Uses useState to store the current window.innerWidth and window.innerHeight values.
 
-Currently, two official plugins are available:
+Event Synchronization: Attaches a resize event listener to the global window object inside useEffect.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The Mount Phase: Uses an empty dependency array [] to ensure the event listener is added only once when the component first renders.
 
-## React Compiler
+The Cleanup Function: Returns a function from useEffect that calls window.removeEventListener. This is an essential industry practice to keep the application performant and bug-free.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Dynamic UI: Automatically re-renders the text display every time the browser window is dragged or resized.
 
-Note: This will impact Vite dev & build performances.
+🚀 How to Run
+To run this specific example locally, follow these steps:
 
-## Expanding the ESLint configuration
+Navigate to the Project Directory: Open your terminal and enter the folder:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Bash
+cd windowResizer
+Install Dependencies: Install the necessary React packages using npm:
+
+Bash
+npm install
+Start the Development Server: Launch the project to view it in your browser:
+
+Bash
+npm run dev
+View the App: Open http://localhost:5173 and try resizing your browser window to see the dimensions update live.
