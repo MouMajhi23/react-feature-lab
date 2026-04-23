@@ -23,7 +23,7 @@ In modern web apps, triggering an action (like an API call or expensive calculat
 
 1. **Navigate to the Project Directory:**
    ```bash
-   cd debounce-component
+   cd debounce-search
 Install Dependencies:
 
 ### Bash
