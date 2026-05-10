@@ -1,4 +1,4 @@
-# Debounced Email Search (React)
+# Debounced Search With Dummy API
 
 This project is a lightweight React application that demonstrates how to implement **API data fetching** combined with a **Debouncing mechanism**. It allows users to search for comments via email from the JSONPlaceholder API without overwhelming the server with requests on every keystroke.
 
