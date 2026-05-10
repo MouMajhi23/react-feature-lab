@@ -31,7 +31,7 @@ The application interacts with the **JSONPlaceholder API**:
 
 ## 🚀 How to Run
 
-1.  **Navigate to the folder:**
+**Navigate to the folder:**
 ```bash
 cd debounce-search-v2
 Install all packages:
