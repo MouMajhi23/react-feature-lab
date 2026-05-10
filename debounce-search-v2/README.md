@@ -33,7 +33,7 @@ The application interacts with the **JSONPlaceholder API**:
 
 1.  **Navigate to the folder:**
 ```bash
-cd fetchDisplay
+cd debounce-search-v2
 Install all packages:
 
 Bash
