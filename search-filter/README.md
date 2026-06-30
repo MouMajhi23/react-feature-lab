@@ -19,13 +19,13 @@ Normalizes both the search term and the data using .toLowerCase() to provide a s
 ## 🚀 How to Run
 Navigate to the folder:
 
-## Bash
+Bash
 cd search-filter
 Install all packages:
 
-## Bash
+Bash
 npm install
 Start the development server:
 
-## Bash
+Bash
 npm run dev
