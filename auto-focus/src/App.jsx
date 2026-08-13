@@ -9,8 +9,6 @@ function App() {
       <section id="center">
         <h2>Auto Focus</h2>
         <AutoFocus/>
-        
-        
       </section>
     </>
   )

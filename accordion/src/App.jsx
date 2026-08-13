@@ -1,11 +1,11 @@
-import Accordion from './Components/Accordion'
+import MultipleOpenAccordion from './Components/MultipleOpenAccordion'
 import "./app.css"
 
 
 function App() {
   return (
     <div id="center">
-      <Accordion />
+     <MultipleOpenAccordion />
     </div>
   )
 }
