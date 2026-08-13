@@ -30,7 +30,7 @@ In React, whenever a parent component updates its state (`items`), every functio
 
 1. **Navigate to the folder:**
 ```bash
-cd todo-callback-optimization
+cd list-item-optimization
 Install all packages:
 
 Bash

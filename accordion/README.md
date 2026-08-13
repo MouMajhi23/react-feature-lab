@@ -1,6 +1,8 @@
-# Single-Open Accordion (React State & Accessibility)
+# React Accordion System (Single & Multiple Open)
 
-This project is a lightweight React application that demonstrates how to build an **accessible, single-open accordion menu** using basic state management. It allows users to expand and collapse FAQ panels while automatically closing the previously open panel to keep the interface clean.
+This project is a lightweight React application that demonstrates how to implement **accordion components with two different interaction models**: single-panel expansion and multi-panel expansion. It serves as a practical guide for controlling component states depending on user requirements.
+
+You can easily switch between rendering `<Accordion />` (single-open) and `<MultipleOpenAccordion />` (multi-open) in your `App.jsx` to test and practice both behaviors!
 
 Please note: I have not enhanced the UI with CSS, as my main goal is mastering React core concepts, not CSS. You can add custom CSS styling as per your choice!
 
@@ -8,25 +10,26 @@ Please note: I have not enhanced the UI with CSS, as my main goal is mastering R
 
 ## 🚀 Features
 
-* **Single-Open State Management:** Ensures only one accordion item is open at a time using a single state variable.
-* **Toggle Interactivity:** Clicking an open accordion item automatically collapses it.
-* **Built-In Accessibility (a11y):** Implements dynamic `aria-expanded` attributes along with matching `aria-controls` and `aria-labelledby` IDs for screen reader compatibility.
-* **Declarative Mapping:** Dynamically renders list items from a structured JavaScript object array.
+* **Dual Operating Modes:** Includes two complete accordion implementations to practice state variations.
+* **Single-Open Mode (`Accordion`):** Maintains strict single-panel visibility where opening a new item automatically closes the previous one.
+* **Multi-Open Mode (`MultipleOpenAccordion`):** Allows users to expand and collapse multiple panels independently using array-based state tracking.
+* **Built-In Accessibility:** Incorporates key `aria` attributes (`aria-expanded`, `aria-controls`, `aria-labelledby`) in the single-open variant for accessible UI standards.
 
 ---
 
 ## 🛠️ How it Works
 
-### 1. The Toggle Logic
-The app maintains an `openId` state initialized to `null`. 
-* When a user clicks an item's header button, the `handleToggle` function executes.
-* If the clicked item's `id` matches `openId`, state resets to `null` (collapsing the panel).
-* If a different item is clicked, `openId` updates to the new `id`, instantly opening the new panel and closing the old one.
+### 1. Single-Open Accordion (`openId` as `String` / `null`)
+The `<Accordion />` component tracks state using a scalar variable (`openId` initialized to `null`):
+* When an item is clicked, `handleToggle` checks if the clicked `id` matches `openId`.
+* If it matches, the panel closes (`openId` becomes `null`).
+* Otherwise, `openId` is set to the new item's `id`, automatically collapsing any currently open section.
 
-### 2. Accessibility Mapping
-Each button-panel pair is linked dynamically using unique IDs:
-* The header button sets `aria-expanded={isOpen}` to communicate panel visibility to assistive technologies.
-* `aria-controls={panelId}` on the button references the expanded section's ID, while `aria-labelledby={buttonId}` on the section points back to the controlling header.
+### 2. Multi-Open Accordion (`openId` as an `Array`)
+The `<MultipleOpenAccordion />` component tracks open sections using an array of active IDs (`openId` initialized to `[]`):
+* When an item is clicked, `handleToggle` checks if the `id` exists inside the array via `.includes(id)`.
+* **If present:** It filters out the `id`, removing it from state and closing that section.
+* **If absent:** It appends the new `id` to the state array using the spread operator (`[...openId, id]`), keeping other panels open.
 
 ---
 
@@ -34,7 +37,7 @@ Each button-panel pair is linked dynamically using unique IDs:
 
 1. **Navigate to the folder:**
 ```bash
-cd accordion
+cd accordion-component
 Install all packages:
 
 Bash
