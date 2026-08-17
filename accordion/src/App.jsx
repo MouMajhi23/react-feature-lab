@@ -1,11 +1,11 @@
-import MultipleOpenAccordion from './Components/MultipleOpenAccordion'
+import AccordionSingleOpenByIndex from './Components/AccordionSingleOpenByIndex'
 import "./app.css"
 
 
 function App() {
   return (
     <div id="center">
-     <MultipleOpenAccordion />
+     <AccordionSingleOpenByIndex/>
     </div>
   )
 }

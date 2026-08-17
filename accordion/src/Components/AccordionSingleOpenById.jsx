@@ -29,7 +29,7 @@ const ACCORDION_ITEMS = [
     },
 ];
 
-const Accordion = () => {
+const AccordionSingleOpenById = () => {
     const [openId, setOpenId] = useState(null);
 
     const handleToggle = (id) => {
@@ -80,4 +80,4 @@ const Accordion = () => {
     );
 };
 
-export default Accordion;
+export default AccordionSingleOpenById;
